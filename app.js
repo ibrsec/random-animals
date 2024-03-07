@@ -1,19 +1,17 @@
 
 
-
+//Selectors
 const btnCats = document.getElementById("btn-cats");
 const btnDogs = document.getElementById("btn-dogs");
 const imgContainer_cats = document.querySelector("#img-container_cats");
 const imgContainer_dogs = document.querySelector("#img-container_dogs");
 const baseUrl_cats = "https://api.thecatapi.com/v1/images/search?limit=10";
 const baseUrl_dogs = "https://api.thedogapi.com/v1/images/search?limit=10";
-
-// const spinners = document.querySelector("#spinners");
 const spinnersCats = document.querySelector("#spinners-cats");
 const spinnersDogs = document.querySelector("#spinners-dogs");
 
 
-
+// api request function
 const getData  = (url,container) => {
     fetch(url)
     .then((response)=> response.json())
@@ -21,9 +19,8 @@ const getData  = (url,container) => {
         
         document.getElementById("favicon").href = data[Math.floor(Math.random() * 10)].url
 
-    console.log(data);
+        console.log(data);
 
-        // spinners.style.display = "none";
         spinnersCats.style.display = "none";
         spinnersDogs.style.display = "none";
 
@@ -40,9 +37,8 @@ const getData  = (url,container) => {
 
 }
 
-getData(baseUrl_cats,imgContainer_cats);
-getData(baseUrl_dogs,imgContainer_dogs);
 
+//manuplating the dom function
 const sendToDom = (data,container) => {
 
         let div =  document.createElement("div");
@@ -62,6 +58,7 @@ const sendToDom = (data,container) => {
 
 }
 
+//cats btn event
 btnCats.addEventListener("click", () => {
 
     spinnersCats.style.display = "flex";
@@ -69,9 +66,15 @@ btnCats.addEventListener("click", () => {
     getData(baseUrl_cats,imgContainer_cats);
 });
 
+//dogs btn event
 btnDogs.addEventListener("click", () => {
     
     spinnersDogs.style.display = "flex";
     imgContainer_dogs.textContent = "";
     getData(baseUrl_dogs,imgContainer_dogs);
 });
+
+
+//run the reuqests
+getData(baseUrl_cats,imgContainer_cats);
+getData(baseUrl_dogs,imgContainer_dogs);
