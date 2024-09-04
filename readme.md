@@ -15,7 +15,7 @@
     <a href="https://github.com/ibrsec/random-animals"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://ibrsec.github.io/random-animals/">View Demo</a>
+    <a href="https://random-animals-seven.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/ibrsec/random-animals/issues">Report Bug</a>
     ·
@@ -60,7 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![random-animals](./project.png)](https://ibrsec.github.io/random-animals/)
+[![random-animals](./project.png)](https://random-animals-seven.vercel.app/)
 
 
 
